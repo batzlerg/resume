@@ -94,10 +94,9 @@ a[href^=http]:after {
 
 /* semantic overrides */
 .column {
-  margin-top: 2rem;
   margin-bottom: 0;
 }
 
-.input-color-picker {
+.color-picker {
   display: none;
 }
