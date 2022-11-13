@@ -1,7 +1,7 @@
 /* todo: why the second empty page when printing? the html, body attributes below don't do squat */
 /* maybe the @page stuff? */
 html, body {
-  height: 99% !important;    
+  height: 99%;
   margin: 0 0 0 0;
   page-break-before: none;
   page-break-after: none;
@@ -9,7 +9,7 @@ html, body {
 }
 
 html {
-  font-size: 10px;
+  font-size: 10.5px;
 }
 
 @page {
@@ -95,4 +95,5 @@ a[href^=http]:after {
 /* semantic overrides */
 .column {
   margin-top: 2rem;
+  margin-bottom: 0;
 }

@@ -8,6 +8,9 @@
 
   --color-light-grey: rgb(223, 223, 223);
   --color-medium-grey: rgb(54, 61, 73);
+
+  --font-serif: 'Garamond', 'Verdana', serif;
+  --font-sans-serif: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Arial', serif;
 }
 
  
@@ -90,14 +93,14 @@ ul li {
 /* global overrides */
 html {
   font-size: 16px;
-  font-family: 'Noto Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-sans-serif);
   font-weight: 400;
   line-height: 1.15;
   box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Serif', 'Times', serif;
+  font-family: var(--font-serif);
   white-space: pre-line;
 }
 
@@ -106,8 +109,12 @@ h1 {
   line-height: 6rem;
 }
 
+h1#graham {
+  font-family: var(--font-sans-serif);
+}
+
 h2 {
-  font-family: 'Open Sans', 'Times', serif;
+  font-family: var(--font-sans-serif);
   font-weight: 400;
   font-size: 1.6rem;
 }
@@ -205,7 +212,7 @@ header {
 
 .contact {
   margin-bottom: 2rem;
-  line-height: 1.7rem;
+  line-height: 1.5rem;
 }
 
 .contact-label {
@@ -213,7 +220,7 @@ header {
 }
 
 .entry-date {
-  line-height: 1.7rem;
+  line-height: 1.5rem;
   flex: 1 1;
   padding-right: 1rem;
 }
@@ -236,5 +243,5 @@ header {
 }
 
 .entry-details-description {
-  line-height: 1.7rem;
+  line-height: 1.5rem;
 }
