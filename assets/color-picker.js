@@ -1,3 +1,6 @@
+// color-picker todo list:
+// - effect, sine wave gradient through the color space? soft pulse?
+
 const colorPickers = document.querySelectorAll('.color-picker-input');
 const styleRootEl = document.querySelector(':root');
 
