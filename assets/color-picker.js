@@ -1,33 +1,30 @@
-// color-picker todo list:
+// color-picker.js todo list:
 // - effect, sine wave gradient through the color space? soft pulse?
 
-const colorPickers = document.querySelectorAll('.color-picker-input');
-const styleRootEl = document.querySelector(':root');
-const themeMetaEl = document.querySelector("meta[name='theme-color']");
-
-const updateCssVarColor = (cssVars) => {
-  Object.keys(cssVars).forEach(key => {
-    styleRootEl.style.setProperty(key, cssVars[key]);
-  });
-};
-
-colorPickers.forEach((el) => {
-  const cssVarKey = `--color-${el.getAttribute('data-id')}`;
+function init() {
+  const colorPickerInputEl = document.querySelector('.color-picker-input');
+  const cssVarName = colorPickerInputEl.getAttribute('data-id');
+  const cssVarLocation = document.querySelector(':root');
   
-  // listen for input to update color
-  el.addEventListener('input', e => {
-    updateCssVarColor({ [cssVarKey]: e.target.value });
+  colorPickerInputEl.addEventListener('input', e => {
+    cssVarLocation.style.setProperty(cssVarName, e.target.value);
+    const themeMetaEl = document.querySelector("meta[name='theme-color']");
     themeMetaEl.content = e.target.value; // otherwise Safari keeps the old color in the browser chrome
   });
-  
-  const propertyValue = getComputedStyle(document.documentElement).getPropertyValue(cssVarKey);
-  const newHex = propertyValue.trim();
-  console.log(`setting color to ${newHex}`);
 
-  // blend the input with the current color
-  el.value = newHex;
+  // this is wrapped in rAF because Firefox claims it doesn't know about our --color CSS var
+  // until some tick after the script self-executes onload -or- after DOMContentLoaded.
+  // it appears to be resolvable by inlining the contents of main.css...
+  // but since this project doesn't involve a build step I'd rather keep it separate for DX reasons
+  requestAnimationFrame(() => {
+    const propertyValue = getComputedStyle(cssVarLocation).getPropertyValue(cssVarName);
+    const newHex = propertyValue.trim();
+    console.log(`setting color to ${newHex}`);
+    // blend set input to current default color
+    colorPickerInputEl.value = newHex;
+  });
 
   // make the color picker visible
   // todo: wrapper element access isn't ideal, grab the wrapper at the top and get its child input
-  setTimeout(() => el.parentElement.classList.add('visible'), 1000);
-});
+  setTimeout(() => colorPickerInputEl.parentElement.classList.add('visible'), 1000);
+}
