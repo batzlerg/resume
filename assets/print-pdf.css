@@ -1,14 +1,21 @@
-/* stylesheet for marginated b+w print */
+/* stylesheet for full-bleed color PDF print */
 
 @page {
-  margin: 10px;
+  margin: 0px;
+}
+:root {
+  --size-base: 1.9rem;
+  --spacing-med: var(--spacing-lg);
 }
 html {
-  font-size: 7.4px;
+  font-size: 7.5px;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
 
 html, body {
   height: 100%;
+  overflow-y: hidden;
   margin: 0 0 0 0;
   page-break-before: none;
   page-break-after: none;
@@ -21,7 +28,6 @@ header {
     the new values of rem-based CSS vars only for the header element.
   */
   padding: var(--spacing-lg) var(--spacing-med) !important;
-  background-color: transparent;
 }
 
 body {
@@ -29,7 +35,8 @@ body {
   page-break-inside: avoid;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* omitting h1 and h2 for contrast against dark header background */
+h3, h4, h5, h6 {
   color: var(--color-neutral-black) !important;
 }
 
