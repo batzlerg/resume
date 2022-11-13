@@ -11,7 +11,7 @@ function init() {
     cssVarLocation.style.setProperty(cssVarName, e.target.value);
     const themeMetaEl = document.querySelector("meta[name='theme-color']");
     console.log(`setting color to ${e.target.value}`);
-    themeMetaEl.content = e.target.value; // otherwise Safari keeps the old color in the browser chrome
+    themeMetaEl.content = e.target.value; // otherwise mobile Safari keeps the old color in the browser chrome
     colorPickerWrapperEl.dataset.tooltip = colorPickerWrapperEl.dataset.tooltip.replace(/#[\da-fA-F]{6}/i, `${e.target.value}`)
   });
 

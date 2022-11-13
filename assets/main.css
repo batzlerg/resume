@@ -272,13 +272,6 @@ header {
   position: relative;
 }
 
-@media screen and (max-width: 700px) {
-  #color-picker {
-    height: 4rem;
-    width: 4rem;
-  }
-}
-
 #color-picker.visible {
   transition: all 0.5s ease-in-out;
   animation: slide-in-and-lock 1000ms forwards, burst 1900ms forwards;
