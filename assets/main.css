@@ -259,7 +259,13 @@ header {
   line-height: 1.5rem;
 }
 
-.color-picker {
+.absolute-bottom-right {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+#color-picker {
   height: 6rem;
   width: 6rem;
   opacity: 0;
@@ -267,7 +273,7 @@ header {
 }
 
 @media screen and (max-width: 700px) {
-  .color-picker {
+  #color-picker {
     height: 4rem;
     width: 4rem;
   }
@@ -278,10 +284,6 @@ header {
     transform: translateX(100%) rotateZ(.5turn);
     opacity: 0;
   }
-  /* 10% {
-    transform: translateX(75%) rotateZ(.2turn);
-    opacity: 0;
-  } */
   60% {
     transform: translateX(10%);
     opacity: .6;
@@ -292,7 +294,6 @@ header {
   }
   95% {
     transform: translateX(0%) rotateZ(0turn);
-    /* text-shadow: 2px 2px 2px transparent;  */
     opacity: 1;
   }
   100% {
@@ -304,20 +305,19 @@ header {
   0% {
     outline: 5px solid linear-gradient(white, transparent);
   }
-
   100% {
     outline: 20px solid transparent;
   }
 }
 
-.color-picker.visible {
+#color-picker.visible {
   transition: all 0.5s ease-in-out;
   animation: slide-in-and-lock 1000ms forwards, burst 1900ms forwards;
   animation-delay: 0, 1000ms;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1), linear;
 }
 
-.color-picker-input {
+#color-picker input {
   border: 5px solid var(--color-neutral-white);
   background-color: transparent;
   border-radius: 4%;
@@ -328,32 +328,33 @@ header {
   transition: size 0.25s ease-in-out;
 }
 
-.color-picker-input:hover {
+#color-picker input:hover {
   cursor: pointer;
 }
 
 /* remove browser styling on color picket input */
-.color-picker-input::-webkit-color-swatch, .color-picker-input::-moz-color-swatch {
+#color-picker input::-webkit-color-swatch, #color-picker input::-moz-color-swatch {
   border-color: transparent;
 }
 
 .rip {
-  padding:10px;
+  padding: 10px;
 }
 
-[data-title] {
+[data-tooltip] {
   cursor: help;
+  position: relative;
 }
 
-[data-title]:hover:after {
+[data-tooltip]:hover:after {
   cursor: "help";
   opacity: 1;
   transition: all 0.1s ease 0.2s;
   visibility: visible;
 }
 
-[data-title]:after {
-  content: attr(data-title);
+[data-tooltip]:after {
+  content: attr(data-tooltip);
   position: absolute;
   left: 3rem;
   z-index: 99999;
@@ -365,8 +366,10 @@ header {
   opacity: 0;
 }
 
-[data-title] {
-  position: relative;
+.tooltip-left[data-tooltip]:after {
+  left: unset;
+  right: 3rem;
+  bottom: 3rem;
 }
 
 @media screen and (min-width: 599px){

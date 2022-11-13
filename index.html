@@ -23,9 +23,6 @@ because your newlines are counted as whitespace -->
           <h1 class="whitespace-pre-line" id="graham">Graham Batzler</h1>
           <h2 class="whitespace-pre-line">Software Architect and Engineering Leader</h2>
         </div>
-        <div class="no-print color-picker">
-          <input class="color-picker-input" type="color" data-id="--color-accent" name="Accent Color" value="#116622">
-        </div>
       </header>
       <div class="columns-wrapper">
         <main class="column column-left">
@@ -65,7 +62,7 @@ because your newlines are counted as whitespace -->
                 <div class="entry-details">
                   <div class="entry-details-title">Senior Software Engineer</div>
                   <div class="entry-details-location">
-                    Bluprint | <span class="entry-details-location-city">Denver CO</span><span class="no-print rip" data-title="COVID-19 RIP">🪦<span>
+                    Bluprint | <span class="entry-details-location-city">Denver CO</span><span class="no-print rip" data-tooltip="COVID-19 RIP">🪦<span>
                   </div>
                   <div class="entry-details-description">
                     <p>
@@ -223,6 +220,18 @@ because your newlines are counted as whitespace -->
             </ul>
           </div>
         </section>
+      </div>
+      <!-- todo: better to have this be utilitarian like this or functional ("color-picker-absolute-wrapper")? -->
+      <div class="absolute-bottom-right">
+        <div id="color-picker" class="no-print tooltip-left" data-tooltip="_ is so boring, let's try a different color!">
+          <input
+            name="Accent Color"
+            type="color"
+            value="#116622"
+            class="color-picker-input"
+            data-var-name="--color-accent"
+          >
+        </div>
       </div>
     </div>
   </body>

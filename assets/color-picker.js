@@ -2,8 +2,9 @@
 // - effect, sine wave gradient through the color space? soft pulse?
 
 function init() {
-  const colorPickerInputEl = document.querySelector('.color-picker-input');
-  const cssVarName = colorPickerInputEl.getAttribute('data-id');
+  const colorPickerWrapperEl = document.getElementById('color-picker');
+  const colorPickerInputEl = colorPickerWrapperEl.querySelector('input:first-of-type')
+  const cssVarName = colorPickerInputEl.getAttribute('data-var-name');
   const cssVarLocation = document.querySelector(':root');
   
   colorPickerInputEl.addEventListener('input', e => {
@@ -25,6 +26,5 @@ function init() {
   });
 
   // make the color picker visible
-  // todo: wrapper element access isn't ideal, grab the wrapper at the top and get its child input
-  setTimeout(() => colorPickerInputEl.parentElement.classList.add('visible'), 1000);
+  setTimeout(() => colorPickerWrapperEl.classList.add('visible'), 1000);
 }
