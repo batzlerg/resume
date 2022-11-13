@@ -17,7 +17,7 @@ colorPickers.forEach((el) => {
   // listen for input to update color
   el.addEventListener('input', e => {
     updateCssVarColor({ [cssVarKey]: e.target.value });
-    themeMetaEl.content = newHex; // otherwise Safari keeps the old color in the browser chrome
+    themeMetaEl.content = e.target.value; // otherwise Safari keeps the old color in the browser chrome
   });
   
   const propertyValue = getComputedStyle(document.documentElement).getPropertyValue(cssVarKey);
