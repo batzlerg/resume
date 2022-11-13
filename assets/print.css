@@ -9,16 +9,12 @@ html, body {
 }
 
 html {
-  font-size: 10.5px;
+  font-size: 8.5px;
 }
 
 @page {
   margin: 10px;
 }
-/* @page {
-  margin: 20px;
-  margin-top:40px;
-} */
 
 header {
   padding-top: 20px;
@@ -35,7 +31,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-neutral-black) !important;
 }
 
-/* Alle Seitenumbrüche definieren */
 a {
   page-break-inside: avoid
 }
@@ -75,21 +70,6 @@ a:visited,
 a {
   color: var(--color-neutral-black);
   font-weight: bold;
-}
-/* replace external links with URLs for print */
-a[href^=http] {
-  page-break-inside: avoid;
-  text-indent: -9999px;
-  display: inline-block;
-  position: relative;
-}
-a[href^=http]:after {
-  display: inline-block !important;
-  content: attr(href);
-  position: absolute;
-  top: 0;
-  left: 9999px;
-  text-decoration: inherit;
 }
 
 /* semantic overrides */
