@@ -1,6 +1,6 @@
 /* VARS */
 :root {
-  --color-accent: #00494D; /* originally rgb(0, 73, 77); hex value required for input picker */
+  --color-accent: #114444; /* hex value required for input picker */
   --color-neutral-white: rgb(255, 255, 255);
   --color-neutral-black: rgb(0, 0, 0);
   --color-light-grey: rgb(238, 238, 238);
@@ -9,6 +9,7 @@
   --font-serif: 'Garamond', 'Verdana', serif;
   --font-sans-serif: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Arial', serif;
 
+  --spacing-sm: 1.2rem;
   --spacing-med: 1.8rem;
   --spacing-lg: 2.7rem;
 }
@@ -84,7 +85,6 @@ ul {
 
 ul li {
   margin-bottom: 1rem;
-  font-size: 1.25rem;
   line-height: 1.5rem;
   white-space: pre-line;
 }
@@ -227,25 +227,32 @@ header {
 }
 
 .entry-date {
-  line-height: 1.5rem;
+  line-height: 2.2rem;
   flex: 1 1;
+  flex-direction: column;
   padding-right: 1rem;
 }
 
 .entry-details {
   flex: 5 1;
   min-width: 0;
+  margin-bottom: var(--spacing-sm);
 }
 
 .entry-details-title {
   font-size: 1.7rem;
   line-height: 2.2rem;
   font-weight: bold;
+  margin-bottom: 0.2rem;
 }
 
 .entry-details-location {
   font-size: 1.5rem;
   line-height: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+.entry-details-location-city {
   font-style: italic;
 }
 
