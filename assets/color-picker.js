@@ -10,7 +10,9 @@ function init() {
   colorPickerInputEl.addEventListener('input', e => {
     cssVarLocation.style.setProperty(cssVarName, e.target.value);
     const themeMetaEl = document.querySelector("meta[name='theme-color']");
+    console.log(`setting color to ${e.target.value}`);
     themeMetaEl.content = e.target.value; // otherwise Safari keeps the old color in the browser chrome
+    colorPickerWrapperEl.dataset.tooltip = colorPickerWrapperEl.dataset.tooltip.replace(/#[\da-fA-F]{6}/i, `${e.target.value}`)
   });
 
   // this is wrapped in rAF because Firefox claims it doesn't know about our --color CSS var
