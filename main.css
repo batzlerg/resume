@@ -1,6 +1,6 @@
 /* VARS */
 :root {
-  --color-accent: rgb(0, 73, 77);
+  --color-accent: #00494D; /* originally rgb(0, 73, 77); hex value required for input picker */
   --color-neutral-white: rgb(255, 255, 255);
   --color-neutral-black: rgb(0, 0, 0);
   /* todo:rename this */
@@ -244,4 +244,20 @@ header {
 
 .entry-details-description {
   line-height: 1.5rem;
+}
+
+.input-color-picker {
+  height: 100px;
+  width: 100px;
+  border-radius: 4%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+  align-self: center;
+  box-sizing: border-box;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }

@@ -97,3 +97,7 @@ a[href^=http]:after {
   margin-top: 2rem;
   margin-bottom: 0;
 }
+
+.input-color-picker {
+  display: none;
+}
