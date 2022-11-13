@@ -318,7 +318,7 @@ header {
 [data-tooltip]:after {
   content: attr(data-tooltip);
   position: absolute;
-  left: 3rem;
+  left: 100%;
   z-index: 99999;
   visibility: hidden;
   white-space: nowrap;
@@ -330,7 +330,7 @@ header {
 
 .tooltip-left[data-tooltip]:after {
   left: unset;
-  right: 3rem;
+  right: calc(100% + 1rem);
   bottom: 3rem;
 }
 
