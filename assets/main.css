@@ -86,7 +86,6 @@ ul li {
 
 
 /* global overrides */
-/* desktop */
 html {
   font-size: 10px;
   font-family: var(--font-sans-serif);
@@ -136,18 +135,9 @@ p {
   margin-bottom: 1rem;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  flex: 1 1 0%;
-  padding: var(--spacing-lg) var(--spacing-med);
-  color: var(--color-neutral-white);
-  background-color: var(--color-accent);
-  align-items: center;
-
-  transition: padding 0.25s ease-in-out;
+i {
+  font-style: italic;
 }
-
 
 /* utility classes */
 .bottom-margin {
@@ -165,7 +155,19 @@ header {
 }
 
 
-/* semantic classes */
+/* structural */
+header {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 0%;
+  padding: var(--spacing-lg) var(--spacing-med);
+  color: var(--color-neutral-white);
+  background-color: var(--color-accent);
+  align-items: center;
+
+  transition: padding 0.25s ease-in-out;
+}
+
 .page-wrapper {
   background-color: var(--color-neutral-white);
   display: flex;
