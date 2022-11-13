@@ -312,6 +312,38 @@ header {
   cursor: pointer;
 }
 
+.rip {
+  padding:10px;
+}
+
+[data-title] {
+  cursor: help;
+}
+
+[data-title]:hover:after {
+  cursor: "help";
+  opacity: 1;
+  transition: all 0.1s ease 0.2s;
+  visibility: visible;
+}
+
+[data-title]:after {
+  content: attr(data-title);
+  position: absolute;
+  left: 3rem;
+  z-index: 99999;
+  visibility: hidden;
+  white-space: nowrap;
+  color: var(--color-light-grey);
+  background-color: var(--color-medium-grey);
+  padding: .1em .5em .2em .5em;
+  opacity: 0;
+}
+
+[data-title] {
+  position: relative;
+}
+
 @media screen and (min-width: 599px){
   html {
     font-size: 11.5px;
