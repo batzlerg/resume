@@ -303,17 +303,3 @@ header {
 .color-picker-input::-moz-color-swatch {
   border: none;
 }
-
-.color-picker-label {
-  display:none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  /* positioning from the center of the label */
-  height: 40px;
-  width: 40px;
-  margin-top: -20px;
-  margin-left: -20px;
-  font-size: 40px;
-}
