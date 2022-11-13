@@ -279,37 +279,6 @@ header {
   }
 }
 
-@keyframes slide-in-and-lock {
-  0% {
-    transform: translateX(100%) rotateZ(.5turn);
-    opacity: 0;
-  }
-  60% {
-    transform: translateX(10%);
-    opacity: .6;
-  }
-  90% {
-    transform: translateX(-20%);
-    opacity: .6;
-  }
-  95% {
-    transform: translateX(0%) rotateZ(0turn);
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes burst {
-  0% {
-    outline: 5px solid linear-gradient(white, transparent);
-  }
-  100% {
-    outline: 20px solid transparent;
-  }
-}
-
 #color-picker.visible {
   transition: all 0.5s ease-in-out;
   animation: slide-in-and-lock 1000ms forwards, burst 1900ms forwards;
@@ -393,5 +362,37 @@ header {
 
   :root {
     --size-base: 3.3rem;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes slide-in-and-lock {
+  0% {
+    transform: translateX(100%) rotateZ(.5turn);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(10%);
+    opacity: .6;
+  }
+  90% {
+    transform: translateX(-20%);
+    opacity: .6;
+  }
+  95% {
+    transform: translateX(0%) rotateZ(0turn);
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes burst {
+  0% {
+    outline: 5px solid linear-gradient(white, transparent);
+  }
+  100% {
+    outline: 20px solid transparent;
   }
 }
