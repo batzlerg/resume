@@ -15,17 +15,17 @@ function init() {
     colorPickerWrapperEl.dataset.tooltip = colorPickerWrapperEl.dataset.tooltip.replace(/#[\da-fA-F]{6}/i, `${e.target.value}`)
   });
 
-  // this is wrapped in rAF because Firefox claims it doesn't know about our --color CSS var
+  // this is wrapped in setTimeout because Firefox claims it doesn't know about our --color CSS var
   // until some tick after the script self-executes onload -or- after DOMContentLoaded.
   // it appears to be resolvable by inlining the contents of main.css...
   // but since this project doesn't involve a build step I'd rather keep it separate for DX reasons
-  requestAnimationFrame(() => {
+  setTimeout(() => {
     const propertyValue = getComputedStyle(cssVarLocation).getPropertyValue(cssVarName);
     const newHex = propertyValue.trim();
     console.log(`setting color to ${newHex}`);
     // blend set input to current default color
     colorPickerInputEl.value = newHex;
-  });
+  }, 0);
 
   // make the color picker visible
   setTimeout(() => colorPickerWrapperEl.classList.add('visible'), 1000);
