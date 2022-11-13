@@ -67,12 +67,7 @@ strong {
   font-weight: 600;
 }
 
-a {
-  transition: color .25s ease-in-out 0ms;
-  color: var(--color-accent);
-}
-
-a:hover {
+a, a:hover {
   color: var(--color-accent);
 }
 
@@ -150,7 +145,7 @@ header {
   background-color: var(--color-accent);
   align-items: center;
 
-  transition: all 0.25s ease-in-out;
+  transition: padding 0.25s ease-in-out;
 }
 
 
@@ -308,7 +303,7 @@ header {
   width: 100%;
   height: 100%;
 
-  transition: all 0.25s ease-in-out;
+  transition: size 0.25s ease-in-out;
 }
 
 .color-picker-input:hover {
