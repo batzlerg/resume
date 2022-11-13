@@ -11,6 +11,9 @@
 
   --font-serif: 'Garamond', 'Verdana', serif;
   --font-sans-serif: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Arial', serif;
+
+  --spacing-med: 2.4rem;
+  --spacing-lg: 3.6rem;
 }
 
  
@@ -106,22 +109,24 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 4rem;
-  line-height: 6rem;
+  line-height: 4rem;
 }
 
 h1#graham {
   font-family: var(--font-sans-serif);
 }
 
+
 h2 {
   font-family: var(--font-sans-serif);
   font-weight: 400;
   font-size: 1.6rem;
+  line-height: 3rem;
 }
 
 h3.section-header {
   color: var(--color-accent);
-  margin-bottom: 2.4rem;
+  margin-bottom: var(--spacing-med);
   border-color: var(--color-light-grey);
 
   font-size: 2.2rem;
@@ -139,8 +144,9 @@ p {
 
 header {
   display: flex;
+  justify-content: space-between;
   flex: 1 1 0%;
-  padding: 2.4rem 2.4rem 3.6rem;
+  padding: var(--spacing-med);
   color: var(--color-neutral-white);
   background-color: var(--color-accent);
 }
@@ -148,7 +154,7 @@ header {
 
 /* utility classes */
 .bottom-margin {
-  margin-bottom: 2.4rem;
+  margin-bottom: var(--spacing-med);
 }
 
 .whitespace-pre-line {
@@ -185,23 +191,23 @@ header {
   max-width: 100%;
   overflow-wrap: break-word;
   position: relative;
-  margin-top: 3.6rem;
-  margin-bottom: 2.4rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-med);
 
   color: var(--color-medium-grey);
 }
 
 .column-left {
   flex: 7 1 0%;
-  padding-right: 3.6rem;
-  padding-left: 2.4rem;
+  padding-right: var(--spacing-lg);
+  padding-left: var(--spacing-med);
   background-color: var(--color-neutral-white);
 }
 
 .column-right {
   flex: 3 1 0%;
-  padding-left: 3.6rem;
-  padding-right: 2.4rem;
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-med);
   background-color: var(--color-background-grey);
 }
 
