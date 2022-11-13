@@ -1,5 +1,7 @@
-/* todo: why the second empty page when printing? the html, body attributes below don't do squat */
-/* maybe the @page stuff? */
+html {
+  font-size: 7.2px;
+}
+
 html, body {
   height: 99%;
   margin: 0 0 0 0;
@@ -8,17 +10,16 @@ html, body {
   page-break-inside: avoid;
 }
 
-html {
-  font-size: 8.5px;
-}
-
 @page {
   margin: 10px;
 }
 
 header {
-  padding-top: 20px;
-  padding-bottom: 10px;
+  /*
+    redeclaring this padding here fixes a bug in Firefox's print modal where it ignores
+    the new values of rem-based CSS vars only for the header element.
+  */
+  padding: var(--spacing-lg) var(--spacing-med) !important;
   background-color: transparent;
 }
 
@@ -29,10 +30,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-neutral-black) !important;
-}
-
-a {
-  page-break-inside: avoid
 }
 
 blockquote {
@@ -46,7 +43,7 @@ h4,
 h5,
 h6 {
   page-break-after: avoid;
-  page-break-inside: avoid
+  page-break-inside: avoid;
 }
 
 img {
@@ -56,13 +53,13 @@ img {
 
 table,
 pre {
-  page-break-inside: avoid
+  page-break-inside: avoid;
 }
 
 ul,
 ol,
 dl {
-  page-break-before: avoid
+  page-break-before: avoid;
 }
 
 a:link,
