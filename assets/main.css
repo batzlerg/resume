@@ -9,9 +9,9 @@
   --font-serif: 'Garamond', 'Verdana', serif;
   --font-sans-serif: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Arial', serif;
 
-  --spacing-sm: 1.2rem;
-  --spacing-med: 1.8rem;
   --spacing-lg: 2.7rem;
+  --spacing-med: calc(.6667 * var(--spacing-lg));
+  --spacing-sm: calc(.5 * var(--spacing-lg));
 }
 
  
