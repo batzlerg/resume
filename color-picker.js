@@ -1,4 +1,4 @@
-const colorPickers = document.querySelectorAll('input.input-color-picker');
+const colorPickers = document.querySelectorAll('.color-picker-input');
 const styleRootEl = document.querySelector(':root');
 
 const updateColor = (cssVars) => {
@@ -19,6 +19,7 @@ colorPickers.forEach((el) => {
   // blend the input with the current color
   el.value = newHex;
 
-  // make the input visible
-  setTimeout(() => el.classList.add('visible'), 1000);
+  // make the color picker visible
+  // todo: wrapper element access isn't ideal, grab the wrapper at the top and get its child input
+  setTimeout(() => el.parentElement.classList.add('visible'), 1000);
 });

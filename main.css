@@ -48,14 +48,14 @@ body {
 	line-height: 1;
   font-size: 1.3rem;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 *,
 :after,
 :before {
   box-sizing: inherit;
-  outline: none
+  outline: none;
 }
 
 b,
@@ -66,7 +66,7 @@ h4,
 h5,
 h6,
 strong {
-  font-weight: 600
+  font-weight: 600;
 }
 
 a {
@@ -95,7 +95,7 @@ ul li {
 
 /* global overrides */
 html {
-  font-size: 16px;
+  font-size: 12px;
   font-family: var(--font-sans-serif);
   font-weight: 400;
   line-height: 1.15;
@@ -146,7 +146,7 @@ header {
   display: flex;
   justify-content: space-between;
   flex: 1 1 0%;
-  padding: var(--spacing-med);
+  padding: var(--spacing-lg) var(--spacing-med);
   color: var(--color-neutral-white);
   background-color: var(--color-accent);
 }
@@ -175,12 +175,12 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .columns-wrapper {
   display: flex;
-  flex-grow: 1
+  flex-grow: 1;
 }
 
 .column {
@@ -213,7 +213,8 @@ header {
 
 .flex-column {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact {
@@ -233,7 +234,7 @@ header {
 
 .entry-details {
   flex: 5 1;
-  min-width: 0
+  min-width: 0;
 }
 
 .entry-details-title {
@@ -252,18 +253,67 @@ header {
   line-height: 1.5rem;
 }
 
-.input-color-picker {
+.color-picker {
   height: 100px;
   width: 100px;
-  border-radius: 4%;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  cursor: pointer;
-  align-self: center;
-  box-sizing: border-box;
+  position: relative;
 }
 
-.visible {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+@keyframes slide-in-and-lock {
+  0% {
+    transform: translateX(100%) rotateZ(.05turn);
+    opacity: 0;
+  }
+  45% {
+    transform: translateX(25%);
+    opacity: .6;
+  }
+  98% {
+    transform: translateX(-2%) rotateZ(-.05turn);
+    opacity: .6;
+  }
+  100% {
+    transform: translateX(0%) rotateZ(0turn);
+    opacity: 1;
+  }
+}
+
+.color-picker.visible {
+  opacity: .6;
+  transition: all 0.5s ease-in-out;
+  animation: slide-in-and-lock 1000ms forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.color-picker.visible:hover {
+  cursor: pointer;
+}
+
+.color-picker-input {
+  border: 5px solid var(--color-neutral-white);
+  background-color: transparent;
+  border-radius: 4%;
+  transition: all 0.5s ease-in-out;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+.color-picker-input::-moz-color-swatch {
+  border: none;
+}
+
+.color-picker-label {
+  display:none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  /* positioning from the center of the label */
+  height: 40px;
+  width: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  font-size: 40px;
 }
