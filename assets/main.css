@@ -332,6 +332,11 @@ header {
   cursor: pointer;
 }
 
+/* remove browser styling on color picket input */
+.color-picker-input::-webkit-color-swatch, .color-picker-input::-moz-color-swatch {
+  border-color: transparent;
+}
+
 .rip {
   padding:10px;
 }
