@@ -194,6 +194,7 @@ header {
 }
 
 .button-link .download-arrow {
+  font-family: 'Zapf Dingbats', sans-serif;
   margin-top: 2px;
   display: inline-block;
   position: relative;
@@ -325,6 +326,7 @@ header {
 
 #color-picker:after {
   pointer-events: none;
+  touch-action: none;
   content: '';
   height: 6rem;
   width: 6rem;
