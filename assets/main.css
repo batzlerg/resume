@@ -324,6 +324,7 @@ header {
 }
 
 #color-picker:after {
+  pointer-events: none;
   content: '';
   height: 6rem;
   width: 6rem;
@@ -376,7 +377,6 @@ header {
 }
 
 [data-tooltip]:hover:after {
-  cursor: "help";
   opacity: 1;
   transition: all 0.1s ease 0.2s;
   visibility: visible;
