@@ -101,15 +101,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3.5rem;
-  line-height: 3.5rem;
-  margin-bottom: .5rem;
-}
-
-h1#graham {
+  font-size: 3rem;
+  line-height: 3rem;
+  margin-bottom: .6rem;
   font-family: var(--font-sans-serif);
 }
 
+/* this h1 type ramp is a little more granular as a result of the header PDF download button */
+@media screen and (min-width:399px){
+  h1 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+}
 
 h2 {
   font-family: var(--font-sans-serif);
@@ -169,20 +173,50 @@ header {
   transition: padding 0.25s ease-in-out;
 }
 
-header a, header a:hover {
+.button-link,
+.button-link:hover,
+.button-link:focus {
   font-weight: bold;
   text-decoration: none;
   border: var(--border-width) solid var(--color-neutral-white);
 }
 
-header a {
+.button-link {
   color: inherit;
-  padding: 15px 20px;
+  padding: 1rem 1.2rem;
+  margin-left: 1.5rem;
 }
 
-header a:hover, header a:focus {
+.button-link:hover,
+.button-link:focus {
   background-color: var(--color-neutral-white);
   color: var(--color-accent);
+}
+
+.button-link .download-arrow {
+  margin-top: 2px;
+  display: inline-block;
+  position: relative;
+  transition: top .5s ease 0s; /* only transition top property */
+  top: 0; /* start transitioning from position '0' instead of 'auto' */
+}
+
+/* this is around the point where I start wanting SASS/LESS nesting */
+.button-link:hover .download-arrow,
+.button-link:focus .download-arrow {
+  animation: bounce 300ms forwards;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-8px);
+  }
+  69% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .page-wrapper {
@@ -373,6 +407,7 @@ header a:hover, header a:focus {
     --size-base: 3.3rem;
   }
 }
+
 
 /* ANIMATIONS */
 @keyframes slide-in-and-lock {
