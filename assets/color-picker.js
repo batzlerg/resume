@@ -1,17 +1,22 @@
-// color-picker.js todo list:
-// - effect, sine wave gradient through the color space? soft pulse?
+// this was initially a prototyping tool that I used to trial new accent colors
+// during development. turns out it's kind of fun and I left it in after a little cleanup.
 
+// init(): bootstrap the --color-accent color picker
 function init() {
   const colorPickerWrapperEl = document.getElementById('color-picker');
   const colorPickerInputEl = colorPickerWrapperEl.querySelector('input:first-of-type')
   const cssVarName = colorPickerInputEl.getAttribute('data-var-name');
   const cssVarLocation = document.querySelector(':root');
+  const themeMetaEl = document.querySelector("meta[name='theme-color']");
   
+  // any time the picker value changes, we want to update:
+  // - the --color-accent var
+  // - the theme meta tag (so that browsers who use it for custom chrome stay consistent)
+  // - the picker tooltip (we don't really *need* to display it there but I like it for discoverability)
   colorPickerInputEl.addEventListener('input', e => {
-    cssVarLocation.style.setProperty(cssVarName, e.target.value);
-    const themeMetaEl = document.querySelector("meta[name='theme-color']");
     console.log(`setting color to ${e.target.value}`);
-    themeMetaEl.content = e.target.value; // otherwise mobile Safari keeps the old color in the browser chrome
+    cssVarLocation.style.setProperty(cssVarName, e.target.value);
+    themeMetaEl.content = e.target.value;
     colorPickerWrapperEl.dataset.tooltip = colorPickerWrapperEl.dataset.tooltip.replace(/#[\da-fA-F]{6}/i, `${e.target.value}`)
   });
 
@@ -27,6 +32,7 @@ function init() {
     colorPickerInputEl.value = newHex;
   }, 0);
 
-  // make the color picker visible
-  setTimeout(() => colorPickerWrapperEl.classList.add('visible'), 1000);
+  // this triggers an inbound animation; it's on a delay so that visitors have a moment
+  // to process the page load before being introduced to dynamic elements
+  setTimeout(() => colorPickerWrapperEl.classList.add('visible'), 1500);
 }

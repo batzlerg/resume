@@ -1,5 +1,12 @@
-<!-- TODO: whitespace-pre-line uses formatting for layout spacing which is no good
-because your newlines are counted as whitespace -->
+<!--
+  hey, look who's curious!
+
+  this resume is written in plain HTML, CSS, and JS with no build process.
+  the color changer is a tool I used during prototyping that I ended up liking enough to clean up and leave in.
+  there are plenty of comments like this throughout the source if you want to know more about how everything was built and some tradeoffs I encountered along the way.
+
+  oh, and the whole thing is open-source: https://github.com/batzlerg/resume
+-->
 <!DOCTYPE html>
 <html translate="no" data-rh="lang" lang="en">
   <head>
@@ -225,9 +232,12 @@ because your newlines are counted as whitespace -->
           </div>
         </section>
       </div>
-      <!-- todo: better to have this be utilitarian like this or functional ("color-picker-absolute-wrapper")? -->
       <div class="absolute-bottom-right">
-        <div id="color-picker" class="no-print tooltip-left" data-tooltip="Theme color is #114444 - want to try a different color?">
+        <div
+          id="color-picker"
+          class="no-print tooltip-left"
+          data-tooltip="Theme color is #114444 - want to try a different color?"
+        >
           <input
             name="Accent Color"
             type="color"
