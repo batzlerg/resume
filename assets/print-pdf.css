@@ -30,23 +30,6 @@ header {
   padding: var(--spacing-lg) var(--spacing-med) !important;
 }
 
-body {
-  background: var(--color-neutral-white) !important;
-  page-break-inside: avoid;
-}
-
-/* omitting h1 and h2 for contrast against dark header background */
-h3, h4, h5, h6 {
-  color: var(--color-neutral-black) !important;
-}
-
-a:link,
-a:visited,
-a {
-  color: var(--color-neutral-black);
-  font-weight: bold;
-}
-
 .column {
   margin-bottom: 0;
 }
