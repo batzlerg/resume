@@ -306,7 +306,6 @@ header {
   background: transparent;
 }
 
-/* todo: remove burst? */
 #color-picker.visible {
   transition: opacity translate 0.5s ease-in-out;
   animation: slide-in-and-lock 1s forwards;
@@ -448,15 +447,6 @@ header {
   }
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes burst {
-  0% {
-    outline: 5px solid linear-gradient(var(--color-accent), transparent);
-  }
-  100% {
-    outline: 20px solid transparent;
   }
 }
 
