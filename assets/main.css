@@ -328,7 +328,7 @@ header {
   height: 6rem;
   width: 6rem;
   opacity: 0;
-  transition: opacity 5s linear;
+  transition: opacity .5s linear;
   position: absolute;
   left: 0;
   /* background won't be visible until hover makes opacity 1 */
@@ -352,6 +352,7 @@ header {
 
 #color-picker:hover:after {
   opacity: .7;
+  transition: opacity 5s linear;
 }
 
 #color-picker input:hover,
