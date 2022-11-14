@@ -20,6 +20,10 @@
  
 /* RESET */
 
+/*
+  I could pare this down to just what we're using on the page, but
+  I'd rather optimize for the DX of future iteration over ~200B of savings
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -31,7 +35,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
+menu, nav, output, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -70,7 +74,7 @@ strong {
   font-weight: 600;
 }
 
-a, a:hover {
+a, a:hover, a:focus {
   text-decoration: underline;
   color: var(--color-accent);
 }
@@ -183,7 +187,7 @@ header a {
   padding: 15px 20px;
 }
 
-header a:hover {
+header a:hover, header a:focus {
   background-color: var(--color-neutral-white);
   color: var(--color-accent);
 }
@@ -307,7 +311,7 @@ header a:hover {
   transition: size 0.25s ease-in-out;
 }
 
-#color-picker input:hover {
+#color-picker input:hover, #color-picker input:focus {
   cursor: pointer;
 }
 
