@@ -185,6 +185,7 @@ header {
   color: inherit;
   padding: 1rem 1.2rem;
   margin-left: 1.5rem;
+  text-align: center;
 }
 
 .button-link:hover,
@@ -322,7 +323,8 @@ header {
   opacity: 0;
 }
 
-#color-picker:after {
+/* using :before because the tooltip is using :after */
+#color-picker:before {
   pointer-events: none;
   touch-action: none;
   content: '';
@@ -351,7 +353,7 @@ header {
   background-size: 300% 100%;
 }
 
-#color-picker:hover:after {
+#color-picker:hover:before {
   opacity: .7;
   transition: opacity 5s linear;
 }
