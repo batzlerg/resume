@@ -63,15 +63,8 @@ body {
   outline: none;
 }
 
-b,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong {
-  font-weight: 600;
+b, h1, h2, h3, h4, h5, h6, strong {
+  font-weight: bold
 }
 
 a, a:hover, a:focus {
@@ -354,6 +347,8 @@ header a:hover, header a:focus {
   right: calc(100% + 1rem);
   bottom: 3rem;
 }
+
+/* MEDIA RESPONSIVE */
 
 @media screen and (min-width: 599px){
   html {
