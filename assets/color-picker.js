@@ -17,7 +17,9 @@ function init() {
     console.log(`setting color to ${e.target.value}`);
     cssVarLocation.style.setProperty(cssVarName, e.target.value);
     themeMetaEl.content = e.target.value;
-    colorPickerWrapperEl.dataset.tooltip = colorPickerWrapperEl.dataset.tooltip.replace(/#[\da-fA-F]{6}/i, `${e.target.value}`)
+    colorPickerWrapperEl.dataset.tooltip = colorPickerWrapperEl.dataset.tooltip.replace(/#[\da-fA-F]{6}/i, `${e.target.value}`);
+    // fix for mobile to remove hover styles after successful input
+    document.activeElement.blur();
   });
 
   // because browsers try to be smart about retaining input values between visits,
