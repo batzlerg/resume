@@ -1,4 +1,4 @@
-#Graham Batzler Resume
+# Graham Batzler Resume
 
 This is my personal resume, up to date as of late 2022.
 
