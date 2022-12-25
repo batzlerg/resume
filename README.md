@@ -1,6 +1,6 @@
 # Graham Batzler Resume
 
-This is my personal resume, up to date as of late 2022.
+This is my personal resume, up to date as of late 2022. You can view it at https://batzlerg.github.io/resume.
 
 It's written in plain HTML, CSS, and JS because although there are a lot of fun frontend tools out there, they're overkill for a single static page like this.
 
