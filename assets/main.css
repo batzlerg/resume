@@ -85,6 +85,12 @@ ul li {
   white-space: pre-line;
 }
 
+ul.current-foci li {
+  list-style-type: square;
+  margin-left: 1.5rem;
+  margin-bottom: .5rem;
+}
+
 
 /* global overrides */
 html {
