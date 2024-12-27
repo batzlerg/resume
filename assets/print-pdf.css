@@ -4,7 +4,7 @@
   margin: 0px;
 }
 :root {
-  --size-base: 1.9rem;
+  --size-base: 2.2rem;
   --spacing-med: var(--spacing-lg);
 }
 html {
