@@ -13,6 +13,7 @@
   --spacing-lg: var(--size-base);
   --spacing-med: calc(.6667 * var(--spacing-lg));
   --spacing-sm: calc(.5 * var(--spacing-lg));
+  --spacing-page-margin: 0rem; /* used for page-level margin in print styling */
 
   --border-width: 3px;
 }
@@ -171,7 +172,7 @@ header {
   display: flex;
   justify-content: space-between;
   flex: 1 1 0%;
-  padding: var(--spacing-lg) var(--spacing-med);
+  padding: var(--spacing-lg) calc(var(--spacing-med) + var(--spacing-page-margin));
   color: var(--color-neutral-white);
   background-color: var(--color-accent);
   align-items: center;
@@ -242,14 +243,16 @@ header {
 .column-left {
   flex: 7 1 0%;
   padding-right: var(--spacing-lg);
-  padding-left: var(--spacing-med);
+  padding-left: calc(var(--spacing-med) + var(--spacing-page-margin));
+  padding-bottom: var(--spacing-page-margin);
   background-color: var(--color-neutral-white);
 }
 
 .column-right {
   flex: 3 1 0%;
   padding-left: var(--spacing-lg);
-  padding-right: var(--spacing-med);
+  padding-right: calc(var(--spacing-med) + var(--spacing-page-margin));
+  padding-bottom: var(--spacing-page-margin);
   background-color: var(--color-light-grey);
 }
 
