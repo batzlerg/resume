@@ -7,6 +7,10 @@
 :root {
   --size-base: 1.8rem;
   --spacing-page-margin: 0rem;
+
+  --color-neutral-black: rgb(0, 0, 0);
+  --color-light-grey: var(--color-neutral-black);
+  --color-medium-grey: var(--color-neutral-black);
 }
 
 html {
