@@ -1,7 +1,7 @@
 /* stylesheet for marginated b+w print */
 
 @page {
-  margin: 22px;
+  margin: 30px;
 }
 
 :root {

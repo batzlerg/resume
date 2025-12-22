@@ -241,7 +241,7 @@ header {
 }
 
 .column-left {
-  flex: 7 1 0%;
+  flex: 7.5 1 0%;
   padding-right: var(--spacing-lg);
   padding-left: calc(var(--spacing-med) + var(--spacing-page-margin));
   padding-bottom: var(--spacing-page-margin);
@@ -249,7 +249,7 @@ header {
 }
 
 .column-right {
-  flex: 3 1 0%;
+  flex: 2.5 1 0%;
   padding-left: var(--spacing-lg);
   padding-right: calc(var(--spacing-med) + var(--spacing-page-margin));
   padding-bottom: var(--spacing-page-margin);
@@ -267,10 +267,6 @@ header {
   line-height: 1.5rem;
 }
 
-h4.contact-label {
-  font-weight: bold;
-}
-
 .entry-date {
   line-height: 2.2rem;
   flex: 1 1;
@@ -279,7 +275,7 @@ h4.contact-label {
 }
 
 .entry-details {
-  flex: 5 1;
+  flex: 6 1;
   min-width: 0;
   margin-bottom: var(--spacing-sm);
 }
